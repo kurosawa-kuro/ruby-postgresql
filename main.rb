@@ -1,11 +1,13 @@
 require 'pg'
+require 'dotenv'
+Dotenv.load
 
 # データベース接続情報
 conn_params = {
-  host: 'localhost',
-  dbname: 'development_db',
-  user: 'dev_user',
-  password: 'dev_password'
+  host: ENV['DB_HOST'],
+  dbname: ENV['DB_NAME'],
+  user: ENV['DB_USER'],
+  password: ENV['DB_PASSWORD']
 }
 
 begin
